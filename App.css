@@ -1,0 +1,51 @@
+
+body {
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.calculator {
+    margin-top: 2rem;
+    display: grid;
+    padding:12px;
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+    background-color: rgb(27, 27, 27);
+    border-radius: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 4rem);
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
+}
+
+button {
+    color:aliceblue;
+    background-color: rgb(53, 53, 53);
+    border:none;
+    padding:1rem;
+}
+
+button:hover {
+    background-color: rgb(76, 75, 75);
+}
+
+.span-two {
+
+}
+
+.display {
+    background-color: rgb(53, 53, 53);
+    padding:20px;
+    color:aliceblue;
+    overflow-x:auto;
+    text-align: right;
+
+}
