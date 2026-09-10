@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<title>Poop's Music Gallery</title>
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="index.css">
+	<meta content="height=device-height, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body  id="payment" style="background-color:#222222">
+
+<div class="div1">
+	<h class="title">poop's music gallery</h>
+</div>
+
+<ul>
+	<li><a data-active="home">home</a></li>
+	<li><a data-active="music" href="music.html">music</a></li>
+	<li><a data-active="the funny" href="theFunny.html">the funny</a></li>
+	<li><a data-active="about" href="about.html">about me</a></li>
+</ul>
+
+<div class="backgroundImage"></div>
+
+<!--content-->
+<div class="content" style="opacity: 1;">
+
+	<div>
+		<img class="backgroundImage">
+
+		<p class="para" style="text-align: center;">purchase license</p>
+		<div class="expandingBorderline" style="margin-left: 140px; margin-right: 140px; line-height:50px;">
+				<p class="para" style="text-align: center; border-bottom: 4px solid white;"></p>
+		</div>
+
+		<div class="paymentContainer">
+			<div style="margin-left: 40% ;margin-right:25%;">
+				<label for="nameOfSong">Song license</label><br>
+				<p id="nameOfSong" class="para">none</p>
+				<label for="amount">Payment Amount</label><br>
+				<p id="amount" class="para">0$</p>
+				<div class="inputs">
+					<label for="cardName">Name on card</label><br>
+					<input type="text" id="cardName"><br>
+					<label for="cardName">Card number</label><br>
+					<input type="text" id="cardNumber"><br>
+					<label for="cardName">Security code</label><br>
+					<input type="text" id="cardNumber"><br>
+					<label for="cardName">Expiry date</label><br>
+					<input type="text" id="expiryDate" size="8"><br>
+				</div>
+
+				<button class="payButton">PAY NOW</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="Footer">
+	<p class="footThing">© 2024 Poop's Music Gallery</p>
+	<p class="dateWatermark"><b>22 JUL 2024</b></p>
+</div>
+<script>
+	const songName = localStorage.getItem('song-name');
+	const songPrice = localStorage.getItem('song-price');
+
+	document.getElementById('nameOfSong').innerText = songName;
+	document.getElementById('amount').innerHTML = songPrice + "$";
+</script>
+<script type="text/javascript" src="javascripts/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+
+/*Global*/
+body {
+	size: 100%;
+	margin: 0px;
+	display: grid;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	grid: auto;
+}
+
+ul {
+	z-index: 5;
+	text-align: center;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	overflow: hidden;
+	background-color: #737373;
+	background: linear-gradient(#595959, rgb(72, 72, 72));
+	box-shadow: 5px;
+}
+
+li {
+	display: inline-block;
+}
+
+li a{
+	margin:0px;
+	text-decoration: none;
+	display: block;
+	position: relative;
+	padding: 15px 30px;
+	font-family: Helvetica;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	user-select: none;
+	letter-spacing: 2px;
+}
+
+
+li a:hover, li a.active{
+	background-color: darkgray;
+	animation-name: expand;
+	animation-duration: 0.2s;
+	animation-iteration-count: 1;
+	letter-spacing: 3px;
+	
+}
+
+li a:not(:hover){
+
+	animation-name: contract;
+	animation-duration: 0.5s;
+	animation-iteration-count: 1;
+	letter-spacing: 2px;
+}
+
+.content {
+	grid-column: 2/3;
+}
+
+.div1 {
+	background-color: #333333;
+	position: relative;
+}
+
+.title {
+	background: url(images/background1.png);
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-align: center;
+	text-shadow: 0px 0px 6px rgb(255, 255, 255);
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+	font-size: 60px;
+	width: 100%;
+	line-height: 90px;
+	font-weight: bold;
+	animation-name: expandTitle;
+	animation-duration:3s;
+	animation-iteration-count:0;
+	letter-spacing: 6px;
+}
+
+
+.Footer {
+	z-index: 5;
+	border-top:1px solid #737373;
+	position: relative;
+	align-content: center;
+	margin-top:auto; 
+	height:100px;
+	background: linear-gradient(#595959, rgb(72, 72, 72));
+	clear:both;
+	grid-column: 1/-1;
+}
+
+.footThing {
+	font-size: 15px;
+	position:relative;
+	text-align: center;
+	top: 14%;
+	color:rgb(170, 170, 170);
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.dateWatermark{
+	opacity: 0;
+	z-index: 2;
+	position:relative;
+	bottom:0;
+	right:0;
+	font-size: 12px; 
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+	text-align: center;
+	color: white;
+}
+
+.para{
+	color: white;
+	text-transform: uppercase;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	letter-spacing: 2px;
+	font-weight: bold;
+}
+
+.subPara {
+	color: white; 
+	letter-spacing: 2px; 
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+	text-align: justify; 
+	font-size: 15px;
+	margin-bottom: 20px;
+}
+
+.expandingBorderline{
+	animation-name: expandingLine;
+	animation-duration:2s;
+	animation-iteration-count:1;
+}
+
+.backgroundImage {
+	background-image: url(images/background1.png);
+	background-repeat: no-repeat;
+	height:100%;
+	width:100%;
+	margin:0;
+	filter: blur(5px);
+	background-position: center;
+}
+/*other stuff*/
+
+/*music page*/
+.popup {
+	z-index: 7;
+	opacity: 1;
+	position: fixed;
+}
+
+.overlay {
+	opacity: 1;
+	z-index: 7;
+	position:absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+.displayer {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.musicContainer {
+	height: 45vh;
+	width:50%;
+	float:left;
+	overflow: hidden;
+	animation-name: opacityMeter;
+	animation-duration: .3s;
+	animation-iteration-count: 1;
+	position:relative;
+}
+
+.Gradient {
+	z-index: 1;
+	opacity: 1;
+	height: 100%;
+	width: 100%;
+	top: 50px;
+	position: absolute;
+	background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.489) ,rgba(0, 0, 0, 0.538), rgb(0, 0, 0));
+}
+
+.musicContainer:hover .Gradient {
+	animation-name: goUp;
+	animation-duration: .3s;
+	animation-iteration-count: 1;
+	top: 0px;
+}
+
+.musicContainer:not(:hover) .Gradient:not(:hover) {
+	animation-name: goDown;
+	animation-duration: .3s;
+	animation-iteration-count: 1;
+}
+
+.musicContainer:hover .songName {
+	animation-name: opacityMeter;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+	opacity: 1;
+}
+
+.musicContainer:not(:hover) .songName{
+	animation-name: revOpacityMeter;
+	animation-duration: .3s;
+	animation-iteration-count: 1;
+}
+
+.musicContainer:hover .playButton, .musicContainer:hover .buyButton {
+	animation-name: opacityMeter;
+	animation-duration: 0.3s;
+	animation-iteration-count: 1;
+	opacity: 1;
+}
+
+.musicContainer:not(:hover) .playButton , .musicContainer:not(:hover) .buyButton{
+	animation-name: revOpacityMeter;
+	animation-duration: .3s;
+	animation-iteration-count: 1;
+}
+
+.playButton {
+	opacity: 0;
+	z-index: 3;
+	padding:6px 10px;
+	border: 0px;
+	position:absolute;
+	font-size: 16px;
+	top:70%;
+	margin-left: 10%;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+
+.buyButton {
+	opacity: 0;
+	z-index: 3;
+	padding:6px 10px;
+	border: 0px;
+	position:absolute;
+	font-size: 16px;
+	top:70%;
+	margin-left: 25%;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 10px;
+	letter-spacing: 2px;
+}
+
+.song {
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+}
+
+.songName{
+	opacity: 0;
+	z-index: 3;
+	color:white; 
+	position: absolute;
+	margin-left: 10%;
+	font-size: 20px; 
+	top: 50%; 
+	font-weight: bold;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.center
+{
+	background-color: red;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*TheFunny page*/
+
+.TheFunnyButton {
+	position: relative;
+	border: 0px;
+	display: block;
+	color:black;
+	padding: 10px 10px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-weight: bold;
+	font-size: 20px;
+	top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 6px
+}
+
+.funnyContainer {
+	position: absolute;
+	margin-left:auto;
+	margin-right: auto;
+	left: 0px;
+	right: 0px;
+}
+
+.TheFunnyPic {
+	opacity: 0;
+	height:270px;
+	width: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.TheFunnyButton.active{
+	animation-name: revOpacityMeter;
+	animation-duration: 2s;
+	animation-iteration-count: 1;
+	opacity: 0;
+}
+
+.TheFunnyPic.active{
+	animation-name: opacityMeter;
+	animation-duration: 3s;
+	animation-iteration-count:1;
+	opacity: 1;
+}
+
+#image1 {
+	position: relative;
+	box-shadow: 0px 0px 20px black;
+	animation-name: opacityMeter;
+	animation-duration: 4s;
+	animation-iteration-count: 1;
+}
+
+/*payment page*/
+
+.paymentContainer {
+	width: 80%;
+	height: 70vh;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.payButton {
+	background-color: rgb(255, 255, 255);
+	border:0px ;
+	font-size: 15px;
+	border-radius: 6px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-weight: bold;
+	top: 10px;
+	padding: 10px 10px; 
+}
+
+.inputs {
+	margin-bottom:20px;
+}
+
+label {
+	color:white;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+@keyframes opacityMeter {
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+@keyframes revOpacityMeter {
+	0% {opacity:1;}
+	100% {opacity:0;}
+}
+
+@keyframes expandingLine {
+	0% {margin-left:600px;margin-right:600px}
+	100% {margin-left:140px;margin-right:140px}
+}
+
+@keyframes expandTitle {
+	0% {opacity:0; letter-spacing: 1px;}
+	100% {opacity: 1; letter-spacing: 6px;}
+}
+
+@keyframes expand {
+	0% {letter-spacing: 2px}
+	100% {letter-spacing: 3px}
+}
+
+@keyframes contract {
+	0% {letter-spacing: 3px}
+	100% {letter-spacing: 2px}
+}
+
+@keyframes goDown{
+	0% {top:0px;}
+	100% {top:50px;}
+}
+
+@keyframes goUp{
+	0% {top:50px;}
+	100% {top:0px;}
+}

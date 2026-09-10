@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--music page-->
+
+<html>
+<title>Poop's Music Gallery</title>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="index.css">
+	<meta content="height=device-height, initial-scale=1">
+</head>
+
+<body id="music" style="background-color:#222222">
+
+<div class="div1">
+	<h class="title">poop's music gallery</h>
+</div>
+
+<div class="popup">
+	<div class="overlay"></div>
+</div>
+
+<ul>
+	<li><a data-active="home"href="index.html">home</a></li>
+	<li><a data-active="music">music</a></li>
+	<li><a data-active="the funny" href="theFunny.html">the funny</a></li>
+	<li><a data-active="about" href="about.html">about me</a></li>
+</ul>
+
+<audio id="song0"><source src="audio/TheOuterSeas.mp3" type="audio/mp3"></audio>
+<audio id="song1"><source src="audio/WhirlingEye.mp3" type="audio/mp3"></audio>
+<audio id="song2"><source src="audio/Irregularity.mp3" type="audio/mp3"></audio>
+<audio id="song3"><source src="audio/Synthortion.mp3" type="audio/mp3"></audio>
+
+
+<div class="content">
+	<div>
+		<div class="musicContainer">
+			<p class="songName">The Outer Seas</p>
+			<button id='0' class="playButton" onclick="playsound(this)">Play</button>
+			<button id="The Outer Seas" class="buyButton" onclick="saveData('The Outer Seas')">buy license</button>
+			<div class="songPicContainer">
+			<div class="Gradient"></div>
+			<img class="song" src="images/Alien.jpg">
+			</div>
+		</div>
+		<div class="musicContainer">
+			<p class="songName">Whirling Eye</p>
+			<button id='1' class="playButton" onclick="playsound(this)">Play</button>
+			<button id="Whirling Eye" class="buyButton" onclick="saveData('Whirling Eye')">buy license</button>
+			<div class="songPicContainer">
+			<div class="Gradient"></div>
+			<img class="song" src="images/WhirlingEye.jpg">
+			</div>
+		</div>
+
+		<div class="musicContainer">
+			<p class="songName">Irregularity</p>
+			<button id='2' class="playButton" onclick="playsound(this)">Play</button>
+			<button id="Irregularity" class="buyButton" onclick="saveData('Irregularity')">buy license</button>
+			<div class="songPicContainer">
+			<div class="Gradient"></div>
+			<img class="song" src="images/Iregular.png">
+			</div>
+		</div>
+
+		<div class="musicContainer">
+			<p class="songName">Synthortion</p>
+			<button id='3' class="playButton" onclick="playsound(this)">Play</button>
+			<button id="Synthortion" class="buyButton" onclick="saveData('Synthortion')">buy license</button>
+			<div class="songPicContainer">
+			<div class="Gradient"></div>
+			<img class="song" src="images/synthortion.png">
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="Footer">
+	<p class="footThing">© 2024 Poop's Music Gallery</p>
+	<p class="dateWatermark"><b>22 JUL 2024</b></p>
+</div>
+
+<script type="text/javascript" src="javascripts/music.js"></script>
+<script type="text/javascript" src="javascripts/buyFunction.js"></script>
+<script type="text/javascript" src="javascripts/script.js"></script>
+</body>
+</html>
